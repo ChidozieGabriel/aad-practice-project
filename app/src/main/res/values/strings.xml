@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AAD Practice Project</string>
+    <string name="splash_screen_image">Splash screen image</string>
 </resources>
