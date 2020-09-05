@@ -13,6 +13,7 @@ import com.chidozie.n.aadpracticeproject.R
 import com.chidozie.n.aadpracticeproject.databinding.ActivityLeaderboardBinding
 import com.chidozie.n.aadpracticeproject.databinding.ToolbarLeaderboardBinding
 import com.chidozie.n.aadpracticeproject.ui.leaderboard.adapter.LeaderboardPagerAdapter
+import com.chidozie.n.aadpracticeproject.ui.submission.SubmissionActivity
 import com.google.android.material.tabs.TabLayoutMediator
 
 class LeaderboardActivity : AppCompatActivity() {
@@ -40,7 +41,8 @@ class LeaderboardActivity : AppCompatActivity() {
         }
 
         toolbarBinding.submitButton.setOnClickListener {
-            // todo: submit project
+            val intent = SubmissionActivity.newIntent(this)
+            startActivity(intent)
         }
 
         val pagerAdapter = LeaderboardPagerAdapter(this)
