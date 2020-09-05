@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import com.chidozie.n.aadpracticeproject.MainActivity
+import com.chidozie.n.aadpracticeproject.ui.leaderboard.LeaderboardActivity
 import com.chidozie.n.aadpracticeproject.R
 
 class SplashActivity : AppCompatActivity() {
@@ -14,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = MainActivity.newIntent(this)
+            val intent = LeaderboardActivity.newIntent(this)
             startActivity(intent)
             finish()
         }, SPLASH_DELAY)

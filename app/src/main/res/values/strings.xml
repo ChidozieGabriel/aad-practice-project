@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">AAD Practice Project</string>
     <string name="splash_screen_image">Splash screen image</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="submit">Submit</string>
+    <string name="no_actionbar">Sorry, action bar does not exist</string>
 </resources>
