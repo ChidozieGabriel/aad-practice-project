@@ -7,4 +7,5 @@
     <color name="colorPrimary">@color/black</color>
     <color name="colorPrimaryDark">@color/black</color>
     <color name="statusBarColor">@color/black</color>
+    <color name="grey">#80F5F5F5</color>
 </resources>

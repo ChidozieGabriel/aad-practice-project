@@ -4,4 +4,9 @@
     <string name="leaderboard">Leaderboard</string>
     <string name="submit">Submit</string>
     <string name="no_actionbar">Sorry, action bar does not exist</string>
+    <string name="top_learner_badge">Top learner badge</string>
+    <string name="total_top_hours">%1$d learning hours, %2$s</string>
+    <string name="total_top_score">%1$d skill IQ score, %2$s</string>
+    <string name="learning_leaders">Learning Leaders</string>
+    <string name="skill_iq_leaders">Skill IQ Leaders</string>
 </resources>

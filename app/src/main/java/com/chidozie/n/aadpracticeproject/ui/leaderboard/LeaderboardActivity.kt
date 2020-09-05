@@ -12,6 +12,8 @@ import androidx.databinding.DataBindingUtil
 import com.chidozie.n.aadpracticeproject.R
 import com.chidozie.n.aadpracticeproject.databinding.ActivityLeaderboardBinding
 import com.chidozie.n.aadpracticeproject.databinding.ToolbarLeaderboardBinding
+import com.chidozie.n.aadpracticeproject.ui.leaderboard.adapter.LeaderboardPagerAdapter
+import com.google.android.material.tabs.TabLayoutMediator
 
 class LeaderboardActivity : AppCompatActivity() {
 
@@ -40,6 +42,13 @@ class LeaderboardActivity : AppCompatActivity() {
         toolbarBinding.submitButton.setOnClickListener {
             // todo: submit project
         }
+
+        val pagerAdapter = LeaderboardPagerAdapter(this)
+        binding.pager.adapter = pagerAdapter
+
+        TabLayoutMediator(binding.tabLayout, binding.pager) { tab, position ->
+            tab.text = pagerAdapter.getFragmentTitle(position)
+        }.attach()
     }
 
     companion object {
