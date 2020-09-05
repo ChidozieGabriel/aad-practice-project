@@ -5,40 +5,29 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.chidozie.n.aadpracticeproject.R
 import com.chidozie.n.aadpracticeproject.databinding.ActivityLeaderboardBinding
 import com.chidozie.n.aadpracticeproject.databinding.ToolbarLeaderboardBinding
 import com.chidozie.n.aadpracticeproject.ui.leaderboard.adapter.LeaderboardPagerAdapter
 import com.chidozie.n.aadpracticeproject.ui.submission.SubmissionActivity
+import com.chidozie.n.aadpracticeproject.ui.util.CustomActionBarActivity
 import com.google.android.material.tabs.TabLayoutMediator
 
-class LeaderboardActivity : AppCompatActivity() {
+class LeaderboardActivity : CustomActionBarActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreate(
+        savedInstanceState: Bundle?, actionBar: ActionBar, inflater: LayoutInflater
+    ) {
         val binding: ActivityLeaderboardBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_leaderboard)
 
-        val actionBar = supportActionBar
-        if (actionBar == null) {
-            Toast.makeText(this, R.string.no_actionbar, Toast.LENGTH_SHORT).show()
-            finish()
-            return
-        }
-
-        val inflater = LayoutInflater.from(this)
         val viewGroup = binding.root as? ViewGroup
         val toolbarBinding = ToolbarLeaderboardBinding.inflate(inflater, viewGroup, false)
 
         // display custom action bar
-        actionBar.apply {
-            displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
-            customView = toolbarBinding.root
-        }
+        actionBar.customView = toolbarBinding.root
 
         toolbarBinding.submitButton.setOnClickListener {
             val intent = SubmissionActivity.newIntent(this)

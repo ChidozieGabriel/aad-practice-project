@@ -14,4 +14,6 @@
     <string name="last_name">Last Name</string>
     <string name="project_on_github_link">Project on GITHUB (link)</string>
     <string name="project_submission">Project Submission</string>
+    <string name="back_navigation">Back navigation</string>
+    <string name="google_africa_developer_scholarship">Google Africa Developer Scholarship</string>
 </resources>
