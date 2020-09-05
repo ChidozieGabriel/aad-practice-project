@@ -1,0 +1,9 @@
+<resources>
+
+    <style name="TextAppearance.TabLayout"
+        parent="TextAppearance.AppCompat.Widget.Button">
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+</resources>
