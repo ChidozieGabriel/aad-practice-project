@@ -7,8 +7,11 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatDialogFragment
+import androidx.databinding.ViewDataBinding
 
 abstract class BaseDialog : AppCompatDialogFragment() {
+
+    protected abstract val binding: ViewDataBinding
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -16,6 +19,10 @@ abstract class BaseDialog : AppCompatDialogFragment() {
         requireActivity().window?.setSoftInputMode(
             WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING
         )
+
+        binding.root.setOnClickListener {
+            dismiss()
+        }
     }
 
     @CallSuper

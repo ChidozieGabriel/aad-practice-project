@@ -4,12 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import com.chidozie.n.aadpracticeproject.databinding.DialogConfirmSubmitBinding
+import com.chidozie.n.aadpracticeproject.ui.submission.dialog.viewmodel.ConfirmSubmitViewModel
 import com.chidozie.n.aadpracticeproject.ui.util.BaseDialog
 
 class ConfirmSubmitDialog : BaseDialog() {
 
-    private lateinit var binding: DialogConfirmSubmitBinding
+    override lateinit var binding: DialogConfirmSubmitBinding
+
+    private val viewModel: ConfirmSubmitViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -20,7 +24,13 @@ class ConfirmSubmitDialog : BaseDialog() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
         binding.cancelImageView.setOnClickListener {
+            dismiss()
+        }
+
+        binding.yesButton.setOnClickListener {
+            viewModel.onConfirmClicked()
             dismiss()
         }
     }
