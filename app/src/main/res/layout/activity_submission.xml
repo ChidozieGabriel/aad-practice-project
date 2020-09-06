@@ -93,6 +93,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/form_margin_vertical"
                     android:hint="@string/project_on_github_link"
+                    android:imeOptions="actionDone"
                     android:inputType="textUri"
                     />
 
@@ -116,6 +117,11 @@
             </LinearLayout>
 
         </ScrollView>
+
+        <include
+            android:id="@+id/loading_Layout"
+            layout="@layout/layout_loading"
+            />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

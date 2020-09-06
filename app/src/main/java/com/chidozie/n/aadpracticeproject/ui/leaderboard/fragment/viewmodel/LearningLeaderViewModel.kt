@@ -1,19 +1,15 @@
-package com.chidozie.n.aadpracticeproject.ui.leaderboard.viewmodel
+package com.chidozie.n.aadpracticeproject.ui.leaderboard.fragment.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import androidx.paging.PagedList
 import androidx.paging.toLiveData
 import com.chidozie.n.aadpracticeproject.api.Repository
 import com.chidozie.n.aadpracticeproject.db.DatabaseImpl
 import com.chidozie.n.aadpracticeproject.model.LearningLeader
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import java.net.SocketTimeoutException
+import com.chidozie.n.aadpracticeproject.ui.util.BaseViewModel
 
-class LearningLeaderViewModel : ViewModel() {
+class LearningLeaderViewModel : BaseViewModel() {
 
     private val dao = DatabaseImpl.instance.learningLeaderDao()
 
@@ -25,14 +21,8 @@ class LearningLeaderViewModel : ViewModel() {
     }
 
     private fun fetchLearningLeaders() {
-        viewModelScope.launch(Dispatchers.IO) {
-            try {
-                Repository.fetchLearningLeaders()
-            } catch (e: SocketTimeoutException) {
-                // todo: sorry, internet connection is not available
-            } catch (e: Exception) {
-                // todo: sorry, an error occurred
-            }
+        runApi {
+            Repository.fetchLearningLeaders()
         }
     }
 }

@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import com.chidozie.n.aadpracticeproject.ui.leaderboard.LeaderboardActivity
 import com.chidozie.n.aadpracticeproject.R
+import com.chidozie.n.aadpracticeproject.ui.leaderboard.activity.LeaderboardActivity
 
 class SplashActivity : AppCompatActivity() {
 

@@ -1,6 +1,7 @@
 package com.chidozie.n.aadpracticeproject.api
 
 import com.chidozie.n.aadpracticeproject.db.DatabaseImpl
+import com.chidozie.n.aadpracticeproject.model.GoogleForm
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -30,14 +31,14 @@ object Repository {
         }
     }
 
-    suspend fun submitProject(
-        emailAddress: String,
-        firstName: String,
-        lastName: String,
-        projectLink: String
-    ) {
+    suspend fun submitProject(form: GoogleForm) {
         withContext(Dispatchers.IO) {
-            googleFormApi.submitProject(emailAddress, firstName, lastName, projectLink)
+            googleFormApi.submitProject(
+                form.emailAddress,
+                form.firstName,
+                form.lastName,
+                form.projectLink
+            )
         }
     }
 

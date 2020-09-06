@@ -1,4 +1,4 @@
-package com.chidozie.n.aadpracticeproject.ui.leaderboard
+package com.chidozie.n.aadpracticeproject.ui.leaderboard.activity
 
 import android.content.Context
 import android.content.Intent
@@ -11,11 +11,11 @@ import com.chidozie.n.aadpracticeproject.R
 import com.chidozie.n.aadpracticeproject.databinding.ActivityLeaderboardBinding
 import com.chidozie.n.aadpracticeproject.databinding.ToolbarLeaderboardBinding
 import com.chidozie.n.aadpracticeproject.ui.leaderboard.adapter.LeaderboardPagerAdapter
-import com.chidozie.n.aadpracticeproject.ui.submission.SubmissionActivity
-import com.chidozie.n.aadpracticeproject.ui.util.CustomActionBarActivity
+import com.chidozie.n.aadpracticeproject.ui.submission.activity.SubmissionActivity
+import com.chidozie.n.aadpracticeproject.ui.util.BaseActivity
 import com.google.android.material.tabs.TabLayoutMediator
 
-class LeaderboardActivity : CustomActionBarActivity() {
+class LeaderboardActivity : BaseActivity() {
 
     override fun onCreate(
         savedInstanceState: Bundle?, actionBar: ActionBar, inflater: LayoutInflater

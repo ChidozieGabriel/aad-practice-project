@@ -2,12 +2,15 @@ package com.chidozie.n.aadpracticeproject.ui.util
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.observe
 import com.chidozie.n.aadpracticeproject.R
+import com.chidozie.n.aadpracticeproject.extension.showToast
 
-abstract class CustomActionBarActivity : AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity() {
+
+    protected open val viewModel: BaseViewModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,7 +18,7 @@ abstract class CustomActionBarActivity : AppCompatActivity() {
         val actionBar = supportActionBar
 
         if (actionBar == null) {
-            Toast.makeText(this, R.string.no_actionbar, Toast.LENGTH_SHORT).show()
+            showToast(R.string.no_actionbar)
             finish()
             return
         }
@@ -25,6 +28,10 @@ abstract class CustomActionBarActivity : AppCompatActivity() {
         val inflater = LayoutInflater.from(this)
 
         onCreate(savedInstanceState, actionBar, inflater)
+
+        viewModel?.observeShowToast?.observe(this) { res ->
+            showToast(res)
+        }
     }
 
     abstract fun onCreate(

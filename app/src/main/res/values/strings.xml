@@ -21,4 +21,8 @@
     <string name="question_mark">\?</string>
     <string name="submission_successful">Submission Successful</string>
     <string name="submission_not_successful">Submission not Successful</string>
+    <string name="all_fields_must_be_filled">All fields must be filled</string>
+    <string name="email_address_is_not_valid">Email address is not valid</string>
+    <string name="project_link_is_not_valid">Project link is not valid</string>
+    <string name="no_internet_connection">Your internet connection is not active</string>
 </resources>
