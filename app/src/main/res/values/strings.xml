@@ -16,4 +16,7 @@
     <string name="project_submission">Project Submission</string>
     <string name="back_navigation">Back navigation</string>
     <string name="google_africa_developer_scholarship">Google Africa Developer Scholarship</string>
+    <string name="yes">Yes</string>
+    <string name="are_you_sure">Are you sure</string>
+    <string name="question_mark">\?</string>
 </resources>

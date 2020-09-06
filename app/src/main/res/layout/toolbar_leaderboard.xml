@@ -35,13 +35,15 @@
                 android:layout_gravity="end"
                 android:backgroundTint="@color/white"
                 android:minHeight="0dp"
+                android:paddingHorizontal="24dp"
                 android:text="@string/submit"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:cornerRadius="24dp"
+                app:cornerRadius="@dimen/button_radius"
                 app:rippleColor="@color/black"
                 />
 

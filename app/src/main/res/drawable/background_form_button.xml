@@ -9,5 +9,5 @@
         android:endColor="@color/yellow"
         android:startColor="#fcb75d"
         />
-    <corners android:radius="8dp" />
+    <corners android:radius="@dimen/button_radius" />
 </shape>

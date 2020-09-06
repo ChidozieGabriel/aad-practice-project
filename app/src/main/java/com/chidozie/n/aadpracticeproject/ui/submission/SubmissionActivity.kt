@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import com.chidozie.n.aadpracticeproject.R
 import com.chidozie.n.aadpracticeproject.databinding.ActivitySubmissionBinding
 import com.chidozie.n.aadpracticeproject.databinding.ToolbarSubmissionBinding
+import com.chidozie.n.aadpracticeproject.ui.submission.dialog.ConfirmSubmitDialog
 import com.chidozie.n.aadpracticeproject.ui.util.CustomActionBarActivity
 
 class SubmissionActivity : CustomActionBarActivity() {
@@ -28,6 +29,11 @@ class SubmissionActivity : CustomActionBarActivity() {
 
         toolbarBinding.backImageView.setOnClickListener {
             finish()
+        }
+
+        binding.submitButton.setOnClickListener {
+            // todo: check that fields are complete
+            ConfirmSubmitDialog.newInstance().show(supportFragmentManager, null)
         }
     }
 

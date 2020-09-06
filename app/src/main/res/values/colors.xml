@@ -9,4 +9,5 @@
     <color name="statusBarColor">@color/black</color>
     <color name="grey">#80F5F5F5</color>
     <color name="yellow">#eb8706</color>
+    <color name="dark_grey">#80141414</color>
 </resources>
