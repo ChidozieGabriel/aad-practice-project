@@ -15,36 +15,30 @@
             android:layout_height="wrap_content"
             >
 
-            <TextView
+            <ImageView
+                android:id="@+id/back_ImageView"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/leaderboard"
-                android:textAllCaps="true"
-                android:textColor="@color/white"
-                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/back_navigation"
+                android:foreground="?android:selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_back"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                tools:textColor="@color/black"
+                tools:ignore="UnusedAttribute"
                 />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/submit_Button"
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:backgroundTint="@color/white"
-                android:minHeight="0dp"
-                android:paddingHorizontal="24dp"
-                android:text="@string/submit"
-                android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textStyle="bold"
+                android:contentDescription="@string/google_africa_developer_scholarship"
+                android:paddingHorizontal="48dp"
+                android:paddingVertical="8dp"
+                android:src="@drawable/ic_submission_toolbar"
+                app:layout_constraintStart_toEndOf="@id/back_ImageView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:cornerRadius="@dimen/button_radius"
-                app:rippleColor="@color/black"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="form_radius">8dp</dimen>
+    <dimen name="form_padding">16dp</dimen>
+    <dimen name="form_margin_vertical">48dp</dimen>
+
+    <dimen name="dialog_width_min">320dp</dimen>
+    <dimen name="dialog_width_max">560dp</dimen>
+    <dimen name="dialog_padding">16dp</dimen>
+    <dimen name="button_radius">24dp</dimen>
+</resources>
