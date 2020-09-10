@@ -16,4 +16,10 @@ object DatabaseImpl {
             .build()
     }
 
+    fun mock(context: Application) {
+        instance = Room.inMemoryDatabaseBuilder(context, Database::class.java)
+            .allowMainThreadQueries()
+            .build()
+    }
+
 }

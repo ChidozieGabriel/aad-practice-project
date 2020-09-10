@@ -1,6 +1,6 @@
 package com.chidozie.n.aadpracticeproject.ui.submission.activity.viewmodel
 
-import android.util.Patterns
+import androidx.core.util.PatternsCompat
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.chidozie.n.aadpracticeproject.R
@@ -81,14 +81,14 @@ class SubmissionViewModel : BaseViewModel() {
             return
         }
 
-        val isValidEmail = Patterns.EMAIL_ADDRESS.matcher(emailAddress).matches()
+        val isValidEmail = PatternsCompat.EMAIL_ADDRESS.matcher(emailAddress).matches()
 
         if (isValidEmail.not()) {
             showToast(R.string.email_address_is_not_valid)
             return
         }
 
-        val isValidWebUrl = Patterns.WEB_URL.matcher(projectLink).matches()
+        val isValidWebUrl = PatternsCompat.WEB_URL.matcher(projectLink).matches()
 
         if (isValidWebUrl.not()) {
             showToast(R.string.project_link_is_not_valid)
