@@ -43,7 +43,7 @@ class SkillIqLeaderAdapter :
             view.imageView.loadImageWithGlide(item.badgeUrl, R.drawable.badge_top_score)
             view.nameTextView.text = item.name
             view.totalTextView.text =
-                context.getString(R.string.total_top_hours, item.score, item.country)
+                context.getString(R.string.total_top_score, item.score, item.country)
         }
     }
 

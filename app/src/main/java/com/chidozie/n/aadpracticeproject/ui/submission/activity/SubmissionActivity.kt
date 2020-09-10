@@ -15,6 +15,7 @@ import androidx.lifecycle.observe
 import com.chidozie.n.aadpracticeproject.R
 import com.chidozie.n.aadpracticeproject.databinding.ActivitySubmissionBinding
 import com.chidozie.n.aadpracticeproject.databinding.ToolbarSubmissionBinding
+import com.chidozie.n.aadpracticeproject.extension.factory
 import com.chidozie.n.aadpracticeproject.ui.submission.activity.viewmodel.SubmissionViewModel
 import com.chidozie.n.aadpracticeproject.ui.submission.dialog.ConfirmSubmitDialog
 import com.chidozie.n.aadpracticeproject.ui.submission.dialog.SubmissionResultDialog
@@ -23,9 +24,13 @@ import com.chidozie.n.aadpracticeproject.ui.util.BaseActivity
 
 class SubmissionActivity : BaseActivity() {
 
-    override val viewModel: SubmissionViewModel by viewModels()
+    public override val viewModel: SubmissionViewModel by viewModels {
+        factory(SubmissionViewModel::class)
+    }
 
-    private val confirmViewModel: ConfirmSubmitViewModel by viewModels()
+    private val confirmViewModel: ConfirmSubmitViewModel by viewModels {
+        factory(ConfirmSubmitViewModel::class)
+    }
 
     override fun onCreate(
         savedInstanceState: Bundle?, actionBar: ActionBar, inflater: LayoutInflater

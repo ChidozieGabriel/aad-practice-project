@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.chidozie.n.aadpracticeproject.databinding.DialogConfirmSubmitBinding
+import com.chidozie.n.aadpracticeproject.extension.factory
 import com.chidozie.n.aadpracticeproject.ui.submission.dialog.viewmodel.ConfirmSubmitViewModel
 import com.chidozie.n.aadpracticeproject.ui.util.BaseDialog
 
@@ -13,7 +14,9 @@ class ConfirmSubmitDialog : BaseDialog() {
 
     override lateinit var binding: DialogConfirmSubmitBinding
 
-    private val viewModel: ConfirmSubmitViewModel by activityViewModels()
+    private val viewModel: ConfirmSubmitViewModel by activityViewModels {
+        requireActivity().factory(ConfirmSubmitViewModel::class)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?

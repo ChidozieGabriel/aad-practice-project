@@ -8,13 +8,16 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chidozie.n.aadpracticeproject.databinding.FragmentLeaderboardBinding
+import com.chidozie.n.aadpracticeproject.extension.factory
 import com.chidozie.n.aadpracticeproject.ui.leaderboard.adapter.SkillIqLeaderAdapter
 import com.chidozie.n.aadpracticeproject.ui.leaderboard.fragment.viewmodel.SkillIqLeaderViewModel
 import com.chidozie.n.aadpracticeproject.ui.util.BaseFragment
 
 class SkillIqLeadersFragment : BaseFragment() {
 
-    override val viewModel: SkillIqLeaderViewModel by viewModels()
+    override val viewModel: SkillIqLeaderViewModel by viewModels {
+        requireActivity().factory(SkillIqLeaderViewModel::class)
+    }
 
     private lateinit var binding: FragmentLeaderboardBinding
 

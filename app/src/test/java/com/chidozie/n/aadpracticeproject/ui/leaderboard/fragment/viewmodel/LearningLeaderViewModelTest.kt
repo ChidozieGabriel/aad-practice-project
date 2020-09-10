@@ -6,7 +6,7 @@ import com.chidozie.n.aadpracticeproject.api.Repository
 import com.chidozie.n.aadpracticeproject.db.DatabaseImpl
 import com.chidozie.n.aadpracticeproject.db.LearningLeaderDao
 import com.chidozie.n.aadpracticeproject.model.LearningLeader
-import com.chidozie.n.aadpracticeproject.util.ListDataSource
+import com.chidozie.n.aadpracticeproject.ui.util.ListDataSource
 import com.chidozie.n.aadpracticeproject.util.MainCoroutineRule
 import io.mockk.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
