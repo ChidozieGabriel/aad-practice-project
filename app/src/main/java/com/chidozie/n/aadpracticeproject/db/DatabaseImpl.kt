@@ -19,6 +19,8 @@ object DatabaseImpl {
     fun mock(context: Application) {
         instance = Room.inMemoryDatabaseBuilder(context, Database::class.java)
             .allowMainThreadQueries()
+            .setQueryExecutor {}
+            .setTransactionExecutor {}
             .build()
     }
 
