@@ -6,14 +6,16 @@ pipeline {
         gradlew('clean')
       }
     }
+
     stage('Build') {
       steps {
         gradlew('assembleDebug')
       }
     }
+
     stage('Unit Tests') {
       steps {
-          gradlew('testDebug')
+          gradlew('testDebugUnitTest')
       }
       post {
           always {
@@ -21,15 +23,17 @@ pipeline {
           }
       }
     }
+
+    
   }
 }
 
 def gradlew(String... args) {
-  def command = "./gradlew ${args.join(' ')} -s"
-  shell(command)
+  sh ./gradlew clean -s
+
 }
 
-// fix windows shell problem
+
 def shell(String command) {
    if (isUnix()) {
     sh command
