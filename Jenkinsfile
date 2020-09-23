@@ -6,6 +6,16 @@ pipeline {
         gradlew('assembleDebug')
       }
     }
+    stage('Unit Tests') {
+      steps {
+          gradlew('testDebug')
+      }
+      post {
+          always {
+              junit '**/build/test-results/test*/TEST-*.xml'
+          }
+      }
+    }
   }
 }
 
