@@ -29,11 +29,12 @@ pipeline {
 }
 
 def gradlew(String... args) {
-  sh ./gradlew clean -s
-
+  def command = "./gradlew ${args.join(' ')} -s"
+  sh command
+  // shell(command)
 }
 
-
+// fix windows shell problem
 def shell(String command) {
    if (isUnix()) {
     sh command
