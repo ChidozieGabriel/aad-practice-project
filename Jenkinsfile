@@ -1,6 +1,11 @@
 pipeline {
   agent any
   stages {
+    stage('Clean') {
+      steps {
+        gradlew('clean')
+      }
+    }
     stage('Build') {
       steps {
         gradlew('assembleDebug')
