@@ -11,7 +11,7 @@ pipeline {
       //         "/usr/local/bin:" +
       //         "/c/Ruby26-x64/bin/fastlane" + 
       //         "$PATH"
-      PATH = "$PATH"
+      PATH = "C:/Ruby26-x64/bin;$PATH"
       LC_ALL = "en_US.UTF-8"
       LANG = "en_US.UTF-8"
 
