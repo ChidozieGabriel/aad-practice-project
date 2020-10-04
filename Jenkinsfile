@@ -40,7 +40,7 @@ pipeline {
       steps {
           // gradlew('testDebugUnitTest')
           // shell('echo $PATH')
-          echo PATH
+          echo HOME
       }
       // post {
       //     always {
