@@ -27,19 +27,19 @@ pipeline {
   stages {
     stage('Clean') {
       steps {
-        shell('fastlane clean')
+        shell('bundle exec fastlane clean')
       }
     }
 
     stage('Build') {
       steps {
-        shell('fastlane build')
+        shell('bundle exec fastlane build')
       }
     }
 
     stage('Unit Tests') {
       steps {
-          shell('fastlane test')
+          shell('bundle exec fastlane test')
       }
       post {
           always {
@@ -48,6 +48,11 @@ pipeline {
       }
     }
 
+    stage('Integration Tests') {
+      steps {
+          shell('bundle exec fastlane integration')
+      }
+    }
     
   }
 }
