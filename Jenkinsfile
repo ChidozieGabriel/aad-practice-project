@@ -39,7 +39,7 @@ pipeline {
     stage('Unit Tests') {
       steps {
           // gradlew('testDebugUnitTest')
-          shell('fastlane test')
+          shell('java --version')
       }
       // post {
       //     always {
