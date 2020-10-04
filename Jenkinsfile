@@ -43,6 +43,7 @@ pipeline {
           // shell('echo $PATH')
           echo PATH
           echo HOME
+          shell('java --version')
       }
       // post {
       //     always {
