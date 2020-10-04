@@ -11,6 +11,7 @@ pipeline {
       //         "/usr/local/bin:" +
       //         "/c/Ruby26-x64/bin/fastlane" + 
       //         "$PATH"
+      PATH = "$PATH"
       LC_ALL = "en_US.UTF-8"
       LANG = "en_US.UTF-8"
 
@@ -40,6 +41,7 @@ pipeline {
       steps {
           // gradlew('testDebugUnitTest')
           // shell('echo $PATH')
+          echo PATH
           echo HOME
       }
       // post {
