@@ -24,11 +24,11 @@ pipeline {
   }
 
   stages {
-    stage('Clean') {
-      steps {
-        gradlew('clean')
-      }
-    }
+    // stage('Clean') {
+    //   steps {
+    //     gradlew('clean')
+    //   }
+    // }
 
     // stage('Build') {
     //   steps {
