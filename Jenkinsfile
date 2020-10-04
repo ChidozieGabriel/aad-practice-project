@@ -30,8 +30,8 @@ pipeline {
 
 def gradlew(String... args) {
   def command = "./gradlew ${args.join(' ')} -s"
-  sh command
-  // shell(command)
+  // sh command
+  shell(command)
 }
 
 // fix windows shell problem
