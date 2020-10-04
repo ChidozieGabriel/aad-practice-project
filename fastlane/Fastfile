@@ -15,11 +15,11 @@
 
 default_platform(:android)
 
-# platform :android do
-#   desc "Runs all the tests"
-#   lane :test do
-#     gradle(task: "test")
-#   end
+platform :android do
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
 
 #   desc "Submit a new Beta Build to Crashlytics Beta"
 #   lane :beta do
@@ -35,7 +35,7 @@ default_platform(:android)
 #     gradle(task: "clean assembleRelease")
 #     upload_to_play_store
 #   end
-# end
+end
 
 platform :android do
   before_all do

@@ -16,7 +16,7 @@ pipeline {
     stage('Unit Tests') {
       steps {
           // gradlew('testDebugUnitTest')
-          ./gradlew testDebugUnitTest
+          shell('fastlane test')
       }
       post {
           always {
