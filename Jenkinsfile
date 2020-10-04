@@ -39,7 +39,8 @@ pipeline {
     stage('Unit Tests') {
       steps {
           // gradlew('testDebugUnitTest')
-          shell('java --version')
+          // shell('echo $PATH')
+          echo PATH
       }
       // post {
       //     always {
