@@ -44,6 +44,8 @@ pipeline {
           echo PATH
           echo HOME
           shell('java --version')
+          shell('ruby --version')
+          shell('fastlane --version')
       }
       // post {
       //     always {
