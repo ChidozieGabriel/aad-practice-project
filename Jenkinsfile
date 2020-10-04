@@ -25,34 +25,27 @@ pipeline {
   }
 
   stages {
-    // stage('Clean') {
-    //   steps {
-    //     gradlew('clean')
-    //   }
-    // }
+    stage('Clean') {
+      steps {
+        shell('fastlane clean')
+      }
+    }
 
-    // stage('Build') {
-    //   steps {
-    //     gradlew('assembleDebug')
-    //   }
-    // }
+    stage('Build') {
+      steps {
+        shell('fastlane build')
+      }
+    }
 
     stage('Unit Tests') {
       steps {
-          // gradlew('testDebugUnitTest')
-          // shell('echo $PATH')
-          echo PATH
-          echo HOME
-          shell('java --version')
-          shell('ruby --version')
-          shell('fastlane --version')
           shell('fastlane test')
       }
-      // post {
-      //     always {
-      //         junit '**/build/test-results/test*/TEST-*.xml'
-      //     }
-      // }
+      post {
+          always {
+              junit '**/build/test-results/test*/TEST-*.xml'
+          }
+      }
     }
 
     
