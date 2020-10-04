@@ -46,6 +46,7 @@ pipeline {
           shell('java --version')
           shell('ruby --version')
           shell('fastlane --version')
+          shell('fastlane test')
       }
       // post {
       //     always {
