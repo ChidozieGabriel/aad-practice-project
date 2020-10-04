@@ -3,14 +3,14 @@ pipeline {
 
     environment {
       // Fastlane Environment Variables
-      HHOME = "C:/Users/ChidozieNnabugwu"
-      PATH = "$HHOME/.fastlane/bin:" +
-              "$HHOME/.rvm/gems/ruby-2.5.3/bin:" +
-              "$HHOME/.rvm/gems/ruby-2.5.3@global/bin:" +
-              "$HHOME/.rvm/rubies/ruby-2.5.3/bin:" +
-              "/usr/local/bin:" +
-              "/c/Ruby26-x64/bin/fastlane" + 
-              "$PATH"
+      // HHOME = "C:/Users/ChidozieNnabugwu"
+      // PATH = "$HHOME/.fastlane/bin:" +
+      //         "$HHOME/.rvm/gems/ruby-2.5.3/bin:" +
+      //         "$HHOME/.rvm/gems/ruby-2.5.3@global/bin:" +
+      //         "$HHOME/.rvm/rubies/ruby-2.5.3/bin:" +
+      //         "/usr/local/bin:" +
+      //         "/c/Ruby26-x64/bin/fastlane" + 
+      //         "$PATH"
       LC_ALL = "en_US.UTF-8"
       LANG = "en_US.UTF-8"
 
