@@ -16,16 +16,26 @@ or alternatively using `brew install fastlane`
 
 # Available Actions
 ## Android
+### android clean
+```
+fastlane android clean
+```
+Clean
+### android build
+```
+fastlane android build
+```
+Build debug
 ### android test
 ```
 fastlane android test
 ```
-Runs all the tests
-### android automation_integrationTests
+Runs all debug tests
+### android integration
 ```
-fastlane android automation_integrationTests
+fastlane android integration
 ```
-Runs tests with usage of emulator plugin
+Runs integration tests debug
 
 ----
 

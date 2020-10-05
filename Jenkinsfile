@@ -25,28 +25,28 @@ pipeline {
   }
 
   stages {
-    stage('Clean') {
-      steps {
-        shell('bundle exec fastlane clean')
-      }
-    }
+    // stage('Clean') {
+    //   steps {
+    //     shell('bundle exec fastlane clean')
+    //   }
+    // }
 
-    stage('Build') {
-      steps {
-        shell('bundle exec fastlane build')
-      }
-    }
+    // stage('Build') {
+    //   steps {
+    //     shell('bundle exec fastlane build')
+    //   }
+    // }
 
-    stage('Unit Tests') {
-      steps {
-          shell('bundle exec fastlane test')
-      }
-      post {
-          always {
-              junit '**/build/test-results/test*/TEST-*.xml'
-          }
-      }
-    }
+    // stage('Unit Tests') {
+    //   steps {
+    //       shell('bundle exec fastlane test')
+    //   }
+    //   post {
+    //       always {
+    //           junit '**/build/test-results/test*/TEST-*.xml'
+    //       }
+    //   }
+    // }
 
     stage('Integration Tests') {
       steps {
