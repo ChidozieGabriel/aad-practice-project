@@ -11,6 +11,7 @@ pipeline {
       //         "/usr/local/bin:" +
       //         "/c/Ruby26-x64/bin/fastlane" + 
       //         "$PATH"
+      PATH = "C:/Ruby26-x64/bin;$PATH"
       PATH = "C:/Ruby26-x64/bin;C:/Program Files/Git/usr/bin;$PATH"
       LC_ALL = "en_US.UTF-8"
       LANG = "en_US.UTF-8"
@@ -50,7 +51,7 @@ pipeline {
 
     stage('Integration Tests') {
       steps {
-        echo PATH
+        echo HOME
         shell('bundle exec fastlane integration')
       }
     }
