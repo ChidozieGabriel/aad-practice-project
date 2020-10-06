@@ -15,7 +15,31 @@
 
 default_platform(:android)
 
+# platform :android do
+
+
+# #   desc "Submit a new Beta Build to Crashlytics Beta"
+# #   lane :beta do
+# #     gradle(task: "clean assembleRelease")
+# #     crashlytics
+  
+# #     # sh "your_script.sh"
+# #     # You can also use other beta testing services here
+# #   end
+
+# #   desc "Deploy a new version to the Google Play"
+# #   lane :deploy do
+# #     gradle(task: "clean assembleRelease")
+# #     upload_to_play_store
+# #   end
+# end
+
 platform :android do
+  before_all do
+    ENV["ANDROID_HOME"] = "/usr/lib/android-sdk"
+    ENV["JAVA_HOME"] = "/usr/lib/jvm/jdk1.8.0_261"
+  end
+
   desc "Clean"
   lane :clean do
     gradle(task: "clean")
@@ -31,31 +55,14 @@ platform :android do
     gradle(task: "testDebugUnitTest")
   end
 
-#   desc "Submit a new Beta Build to Crashlytics Beta"
-#   lane :beta do
-#     gradle(task: "clean assembleRelease")
-#     crashlytics
-  
-#     # sh "your_script.sh"
-#     # You can also use other beta testing services here
-#   end
-
-#   desc "Deploy a new version to the Google Play"
-#   lane :deploy do
-#     gradle(task: "clean assembleRelease")
-#     upload_to_play_store
-#   end
-end
-
-platform :android do
-  before_all do
-  end
-
   desc "Runs integration tests debug"
   lane :integration do
     automated_test_emulator_run(
       AVD_setup_path: "./fastlane/AVD_configs/AVD_config.json",
-      gradle_task: "connectedDevDebugAndroidTest"
+      gradle_task: "connectedDebugAndroidTest",
+      AVD_param_launch_timeout: "600",
+      AVD_recreate_new: false,
+      AVD_clean_after: false,
     )
   end
 
