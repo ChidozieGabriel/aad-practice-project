@@ -67,9 +67,9 @@ def gradlew(String... args) {
 // fix windows shell problem
 def shell(String command) {
    if (isUnix()) {
-    sh command
+    bash command
   } else {
     // bat command
-    sh command
+    bash command
   }
 }
