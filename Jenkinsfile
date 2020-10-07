@@ -16,19 +16,18 @@ pipeline {
 
     stage('Unit Tests') {
       steps {
-          shell('./gradlew testDebugUnitTest')
+        shell('./gradlew testDebugUnitTest')
       }
       post {
-          always {
-            junit '**/build/test-results/test*/TEST-*.xml'
-          }
+        always {
+          junit '**/build/test-results/test*/TEST-*.xml'
+        }
       }
     }
 
     stage('Integration Tests') {
       steps {
         shell('bundle exec fastlane integration')
-      
       }
       post {
         always {
