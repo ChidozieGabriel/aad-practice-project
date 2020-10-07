@@ -36,9 +36,7 @@ default_platform(:android)
 
 platform :android do
   before_all do
-    ENV["ANDROID_HOME"] = "/usr/lib/android-sdk"
-    ENV["JAVA_HOME"] = "/usr/lib/jvm/jdk1.8.0_261"
-  end
+ end
 
   desc "Clean"
   lane :clean do
