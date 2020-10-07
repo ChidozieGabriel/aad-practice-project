@@ -51,7 +51,7 @@ pipeline {
     stage('Integration Tests') {
       steps {
         echo HOME
-        shell('which sudo')
+        shell('bash which sudo')
       }
     }
     
@@ -67,9 +67,9 @@ def gradlew(String... args) {
 // fix windows shell problem
 def shell(String command) {
    if (isUnix()) {
-    bash command
+    sh command
   } else {
     // bat command
-    bash command
+    bat command
   }
 }
