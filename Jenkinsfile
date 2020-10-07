@@ -24,6 +24,7 @@ pipeline {
       // JIRA_PROJECT_KEY = ""
       // JAVA_HOME = "/usr/bin/java"
       // ANDROID_HOME = "/usr/bin/java"
+      DUMMY = ""
   }
 
   stages {
