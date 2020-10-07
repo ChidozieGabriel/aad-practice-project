@@ -28,10 +28,11 @@ pipeline {
     stage('Integration Tests') {
       steps {
         shell('bundle exec fastlane integration')
-        post {
-          always {
-            junit '**/build/outputs/androidTest-results/connected/flavors/*AndroidTest/TEST-*.xml'
-          }
+      
+      }
+      post {
+        always {
+          junit '**/build/outputs/androidTest-results/connected/flavors/*AndroidTest/TEST-*.xml'
         }
       }
     }
