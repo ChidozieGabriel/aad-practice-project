@@ -1,7 +1,7 @@
 pipeline {
   agent any
 
-    environment {
+    // environment {
       // Fastlane Environment Variables
       // HHOME = "C:/Users/ChidozieNnabugwu"
       // PATH = "$HHOME/.fastlane/bin:" +
@@ -22,7 +22,7 @@ pipeline {
       // DROPBOX_FOLDER = ""
       // PROGUARD_ENABLED = ""
       // JIRA_PROJECT_KEY = ""
-  }
+  // }
 
   stages {
     // stage('Clean') {
