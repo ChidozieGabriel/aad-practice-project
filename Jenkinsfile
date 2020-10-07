@@ -51,7 +51,7 @@ pipeline {
     stage('Integration Tests') {
       steps {
         echo HOME
-        shell('wsl which sudo')
+        shell('wsl echo $USER')
       }
     }
     
