@@ -11,17 +11,17 @@ pipeline {
       //         "/usr/local/bin:" +
       //         "/c/Ruby26-x64/bin/fastlane" + 
       //         "$PATH"
-      PATH = "C:/Ruby26-x64/bin;C:/Program Files/Git/usr/bin;C:/Windows/System32/bash.exe;C:/Windows/System32/wsl.exe;$PATH"
-      LC_ALL = "en_US.UTF-8"
-      LANG = "en_US.UTF-8"
+      // PATH = "C:/Ruby26-x64/bin;C:/Program Files/Git/usr/bin;C:/Windows/System32/bash.exe;C:/Windows/System32/wsl.exe;$PATH"
+      // LC_ALL = "en_US.UTF-8"
+      // LANG = "en_US.UTF-8"
 
-      VERSION_NAME = ""
-      VERSION_SUFFIX = ""
-      APP_VERSION_NAME = ""
-      VERSION_CODE = ""
-      DROPBOX_FOLDER = ""
-      PROGUARD_ENABLED = ""
-      JIRA_PROJECT_KEY = ""
+      // VERSION_NAME = ""
+      // VERSION_SUFFIX = ""
+      // APP_VERSION_NAME = ""
+      // VERSION_CODE = ""
+      // DROPBOX_FOLDER = ""
+      // PROGUARD_ENABLED = ""
+      // JIRA_PROJECT_KEY = ""
   }
 
   stages {
@@ -51,10 +51,9 @@ pipeline {
     stage('Integration Tests') {
       steps {
         echo HOME
-        sh '''#!/bin/bash
-                 echo "hello world" 
-         '''
-        shell('bash -c "echo $USER"')
+        echo USER
+        echo JAVA
+        echo isUnix()
       }
     }
     
