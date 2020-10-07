@@ -36,6 +36,7 @@ default_platform(:android)
 
 platform :android do
   before_all do
+    ENV["JAVA_HOME"] = "/usr/lib/jvm/jdk1.8.0_261"
   end
 
   desc "Clean"
