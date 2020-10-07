@@ -51,7 +51,7 @@ pipeline {
     stage('Integration Tests') {
       steps {
         echo HOME
-        bash '''#!/bin/bash
+        sh '''#!/bin/bash
                  echo "hello world" 
          '''
         shell('bash -c "echo $USER"')
