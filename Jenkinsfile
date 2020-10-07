@@ -25,6 +25,7 @@ pipeline {
       // JAVA_HOME = "/usr/bin/java"
       // ANDROID_HOME = "/usr/bin/java"
       DUMMY = ""
+      HOME = "/home/chidozie"
   }
 
   stages {
