@@ -1,7 +1,7 @@
 pipeline {
   agent any
 
-    // environment {
+    environment {
       // Fastlane Environment Variables
       // HHOME = "C:/Users/ChidozieNnabugwu"
       // PATH = "$HHOME/.fastlane/bin:" +
@@ -22,36 +22,39 @@ pipeline {
       // DROPBOX_FOLDER = ""
       // PROGUARD_ENABLED = ""
       // JIRA_PROJECT_KEY = ""
-  // }
+      // JAVA_HOME = "/usr/bin/java"
+      // ANDROID_HOME = "/usr/bin/java"
+  }
 
   stages {
-    // stage('Clean') {
-    //   steps {
-    //     shell('bundle exec fastlane clean')
-    //   }
-    // }
+    stage('Clean') {
+      steps {
+        shell('./gradlew clean')
+      }
+    }
 
-    // stage('Build') {
-    //   steps {
-    //     shell('bundle exec fastlane build')
-    //   }
-    // }
+    stage('Build') {
+      steps {
+        shell('./gradlew assembleDebug')
+      }
+    }
 
-    // stage('Unit Tests') {
-    //   steps {
-    //       shell('bundle exec fastlane test')
-    //   }
-    //   post {
-    //       always {
-    //           junit '**/build/test-results/test*/TEST-*.xml'
-    //       }
-    //   }
-    // }
+    stage('Unit Tests') {
+      steps {
+          shell('./gradlew testDebugUnitTest')
+      }
+      post {
+          always {
+              junit '**/build/test-results/test*/TEST-*.xml'
+          }
+      }
+    }
 
     stage('Integration Tests') {
       steps {
-        echo JAVA_HOME
-        echo ANDROID_HOME
+        shell('bundle exec fastlane integration')
+        // echo JAVA_HOME
+        // echo ANDROID_HOME
         // echo USER
         // echo JAVA
         // echo isUnix()
@@ -70,8 +73,10 @@ def gradlew(String... args) {
 // fix windows shell problem
 def shell(String command) {
    if (isUnix()) {
-    sh command
+     echo "unix"
+      sh command
   } else {
+    echo "not unit"
     // bat command
     bat command
   }
