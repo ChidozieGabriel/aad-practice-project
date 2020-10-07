@@ -50,7 +50,7 @@ pipeline {
 
     stage('Integration Tests') {
       steps {
-        echo HOME
+        echo USER
         echo HOME
         // echo USER
         // echo JAVA
