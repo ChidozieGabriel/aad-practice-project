@@ -51,7 +51,7 @@ pipeline {
     stage('Integration Tests') {
       steps {
         echo HOME
-        shell('wsl echo $USER')
+        shell('bash echo $USER')
       }
     }
     
