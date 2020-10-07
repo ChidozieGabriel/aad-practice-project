@@ -51,7 +51,7 @@ pipeline {
     stage('Integration Tests') {
       steps {
         echo HOME
-        shell('bash which sudo')
+        shell('bash -c "which sudo"')
       }
     }
     
