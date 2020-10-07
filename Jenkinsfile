@@ -51,7 +51,7 @@ pipeline {
     stage('Integration Tests') {
       steps {
         echo HOME
-        shell('bash echo $USER')
+        shell('bash -c "echo $USER"')
       }
     }
     
