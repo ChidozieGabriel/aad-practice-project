@@ -27,7 +27,7 @@ pipeline {
 
     stage('Integration Tests') {
       steps {
-        shell('sudo -E bundle exec fastlane integration')
+        shell('bundle exec fastlane integration')
       }
     }
   }
