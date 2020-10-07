@@ -51,18 +51,10 @@ pipeline {
     stage('Integration Tests') {
       steps {
         echo HOME
+        echo HOME
         // echo USER
         // echo JAVA
         // echo isUnix()
-      }
-      steps {
-        echo USER
-      }
-      steps {
-        echo JAVA
-      }
-      steps {
-        echo isUnix()
       }
     }
     
