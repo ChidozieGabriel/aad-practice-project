@@ -11,7 +11,7 @@
       "launch_avd_port": "",
       "launch_avd_snapshot_filepath": "",
       "launch_avd_launch_binary_name": "emulator",
-      "launch_avd_additional_options": "-no-boot-anim -verbose -no-audio -no-accel -no-window -memory 4096 "
+      "launch_avd_additional_options": "-no-boot-anim -verbose -no-audio -no-accel -no-window -memory 8192 "
     }
   ]
 }
