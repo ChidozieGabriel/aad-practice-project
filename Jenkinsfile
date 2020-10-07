@@ -70,6 +70,6 @@ def shell(String command) {
     sh command
   } else {
     // bat command
-    bat command
+    sh command
   }
 }
