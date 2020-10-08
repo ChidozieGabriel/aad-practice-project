@@ -4,8 +4,10 @@ pipeline {
   stages {
     stage('Make gradle executable') {
       steps {
-        if (isUnix()) {
-          shell('chmod -x gradlew')
+        script {
+          if (isUnix()) {
+            shell('chmod -x gradlew')
+          }
         }
       }
     }
