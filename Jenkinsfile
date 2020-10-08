@@ -1,6 +1,10 @@
 pipeline {
   agent any
 
+  options {
+    parallelsAlwaysFailFast()
+  }
+
   stages {
     stage('Make gradle executable') {
       steps {
@@ -12,37 +16,43 @@ pipeline {
       }
     }
 
-    stage('Clean') {
-      steps {
-        shell('./gradlew clean')
-      }
-    }
-
-    stage('Build') {
-      steps {
-        shell('./gradlew assembleDebug')
-      }
-    }
-
-    stage('Unit Tests') {
-      steps {
-        shell('./gradlew testDebugUnitTest')
-      }
-      post {
-        always {
-          junit '**/build/test-results/test*/TEST-*.xml'
+    stage('Parallel') {
+      parallel {
+        stage('Integration Tests') {
+          steps {
+            shell('bundle exec fastlane integration')
+          }
+          post {
+            always {
+              junit '**/build/outputs/androidTest-results/connected/flavors/*AndroidTest/TEST-*.xml'
+            }
+          }
         }
-      }
-    }
+        stage('Sequential') {
+          stages {
+            stage('Clean') {
+              steps {
+                shell('./gradlew clean')
+              }
+            }
 
-    stage('Integration Tests') {
-      steps {
-        // shell('sdkmanager "system-images;android-23;default;x86"')
-        shell('bundle exec fastlane integration')
-      }
-      post {
-        always {
-          junit '**/build/outputs/androidTest-results/connected/flavors/*AndroidTest/TEST-*.xml'
+            stage('Build') {
+              steps {
+                shell('./gradlew assembleDebug')
+              }
+            }
+
+            stage('Unit Tests') {
+              steps {
+                shell('./gradlew testDebugUnitTest')
+              }
+              post {
+                always {
+                  junit '**/build/test-results/test*/TEST-*.xml'
+                }
+              }
+            }
+          }   
         }
       }
     }
