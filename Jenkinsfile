@@ -2,6 +2,14 @@ pipeline {
   agent any
 
   stages {
+    stage('Make gradle executable') {
+      steps {
+        if (isUnix()) {
+          shell('chmod -x gradlew')
+        }
+      }
+    }
+
     stage('Clean') {
       steps {
         shell('./gradlew clean')
