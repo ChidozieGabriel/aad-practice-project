@@ -6,16 +6,6 @@ pipeline {
   }
 
   stages {
-    stage('Make gradle executable') {
-      steps {
-        script {
-          if (isUnix()) {
-            shell('chmod -x gradlew')
-          }
-        }
-      }
-    }
-
     stage('Parallel') {
       parallel {
         stage('Integration Tests') {
