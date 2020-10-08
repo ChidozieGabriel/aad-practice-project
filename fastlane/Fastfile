@@ -37,6 +37,8 @@ default_platform(:android)
 platform :android do
   before_all do
     ENV["JAVA_HOME"] = "/usr/lib/jvm/jdk1.8.0_261"
+    # ENV["ANDROID_HOME"] = "/usr/lib/android-sdk"
+    ENV["ADB_INSTALL_TIMEOUT"] = "800"
   end
 
   desc "Clean"

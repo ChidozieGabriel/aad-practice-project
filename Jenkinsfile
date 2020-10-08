@@ -27,6 +27,7 @@ pipeline {
 
     stage('Integration Tests') {
       steps {
+        shell('sdkmanager "system-images;android-23;default;x86"')
         shell('bundle exec fastlane integration')
       }
       post {
